@@ -1,0 +1,51 @@
+<app-class-seventeen></app-class-seventeen>
+<br>
+<p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>
+<div class="secondbox">
+  <h1>Angular Tutorial - 16 - Pipes
+  </h1><a href="https://www.youtube.com/watch?v=y8lwG8IM82k&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=16">Clique</a><br><br>
+  <div class="mainbox">
+    <p>transformar dados antes de eles irem pra tela</p>
+  </div>
+  <h1>strings</h1>
+  <h2>{{oi}}</h2>
+  <h2>{{oi | lowercase}}</h2>
+  <h2>{{oi | uppercase}}</h2>
+  <h2>{{oi | uppercase}}</h2>
+  <h2>{{lorem}}</h2>
+  <h2>{{lorem | lowercase}}</h2>
+  <h2>{{lorem | uppercase}}</h2>
+  <h2>{{lorem | uppercase}}</h2>
+  <h2>{{lorem | titlecase}}</h2>
+  <h2>{{lorem | slice:5:10}}</h2>
+  <h2>{{ arthurRodrigues | json }}</h2>
+
+  <h1>numbers</h1>
+  <p>abaixo usei um piper number com os seguintes parâmetros: 1.2-3, ou seja, 1 número inteiro, no mínimo 2 decimais e no máximo 3 decimais</p>
+  <h2>{{ theNumber | number:'1.2-3'}}</h2>
+
+  <p>abaixo usei um piper number com os seguintes parâmetros: 2.3-7, ou seja, 2 números inteiro, no mínimo 3 decimais e no máximo 7 decimais</p>
+  <h2>{{ theNumber | number:'2.3-7'}}</h2>
+  <p>abaixo, o percent pipe</p>
+  <h2>{{ theNumber2 | percent}}</h2>
+  <p>abaixo, o currency pipe</p>
+  <h2>{{ theNumber2 | currency}}</h2>
+  <p>abaixo, o currency pipe em real</p>
+  <h2>{{ theNumber2 | currency:'BRL'}}</h2>
+
+  <h1>data</h1>
+  <h2>{{date | date:'short'}}</h2>
+  <h2>{{date | date:'shortTime'}}</h2>
+  <h2>{{date | date:'mediumTime'}}</h2>
+  <h2>{{date | date:'mediumDate'}}</h2>
+  <h2>{{date | date:'shortDate'}}</h2>
+</div>
+
+<div class="mainbox">
+  <h1>{{'Hello, ' + nome}}</h1>
+  <div class="secondbox"><br><br><br>
+    <button (click)="handleClick()">Clique aqui para alterar o número</button>
+    <button (click)="testCV(1)">teste com variável</button>
+    <div class="secondbox">{{ arth }}</div>
+  </div>
+</div>

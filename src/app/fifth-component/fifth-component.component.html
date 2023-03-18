@@ -1,0 +1,71 @@
+<br>
+<p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>
+<div class="mainbox">
+  <h1>Curso Angular #12: Two-way data binding
+  </h1>
+
+  <form>
+    <input type="text" [(ngModel)]="theName" name="theName" placeholder="Digite seu nome aqui">
+    <input type="submit" value="Enviar">
+  </form>
+  <p>o nome é {{ theName }}</p>
+  <p>o nome é {{ theName }}</p>
+  <p>o nome é {{ theName }}</p>
+  <p>o nome é {{ theName }}</p>
+  <p>o nome é {{ theName }}</p>
+  <div class="mainbox">{{ theName }} <br>{{ theName }} <br>{{ theName }} <br>{{ theName }}
+
+  </div>
+  <br>
+  <p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>
+</div>
+<div class="mainbox">
+  <h1>Curso Angular #13: Reusando Componentes com Input properties
+  </h1>
+
+  <section>
+    <h2>Exercício</h2>
+    <article>
+      <app-input-output [title]="localTitle" [firstsubtitle]="localSubtitle" [thetext]="theLocalText" [bgcolor]="color1" [txtcolor]="color2" [thestyles]="localstyles">
+      </app-input-output>
+    </article>
+    <article>
+      <app-input-output [title]="localSubtitle" [firstsubtitle]="localTitle" [thetext]="theLocalText" [bgcolor]="color2" [txtcolor]="color1" [thestyles]="localstyles" [paddingandmargin]="px1">
+      </app-input-output>
+    </article>
+    <article>
+      <app-input-output [title]="localTitle2" [firstsubtitle]="localSubtitle2" [thetext]="theLocalText2" [bgcolor]="color3" [txtcolor]="color4" [thestyles]="localstyles" [paddingandmargin]="px2">
+      </app-input-output>
+    </article>
+    <article>
+      <app-input-output [title]="localTitle" [firstsubtitle]="localSubtitle2" [thetext]="theLocalText2" [bgcolor]="color5" [txtcolor]="color2" [thestyles]="localstyles" [paddingandmargin]="px3">
+      </app-input-output>
+    </article>
+  </section>
+</div>
+
+<br>
+<p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>
+<div class="mainbox">
+  <h1>Vou tentar setar valores pela tela</h1>
+  <input #selectedsize (change)="0" type="number" placeholder="Tamanho do Texto"><br>
+  <input type="number" placeholder="Border Radius">
+  <br><br>
+  <p>Selecione a fonte</p>
+  <select #selectedfont (change)="0">
+    <option value="arial">Arial</option>
+    <option value="times-new-roman">Times New Roman</option>
+    <option value="calibri">Calibri</option>
+    <option value="trebuchet">Trebuchet</option>
+    <option value="pt-sans">Pt Sans</option>
+    <option value="arial-narrow">Arial Narrow</option>
+    <option value="fira-sans">Fira Sans</option>
+  </select>
+  <div>
+    <h1 class="change {{ selectedfont.value }}">Título
+    </h1>
+    <p class="change {{ selectedfont.value }}">Esta sessão receberá as propriedades setadas acima no template.</p>
+  </div>
+</div>
+<br>
+<p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>

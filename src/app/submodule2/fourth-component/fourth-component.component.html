@@ -1,0 +1,19 @@
+<div class="mainbox">
+  <h1>Event Binding</h1>
+  <h2>Exercício 1</h2>
+  <div> <button (click)="clickedButton('tchau')" class="btn btn-primary">me clique</button>
+    <br>
+  </div>
+  <h2>Exercício 2</h2>
+  <input #input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="saveValue($event)" />
+
+  <div class="mainbox">perguntar pro will #1</div>
+  <h3>A tecla clicada foi:</h3>
+  <div class="mainbox">{{ divKey }}</div>
+  <h3>Texto em tempo real</h3>
+  <div class="mainbox">{{ divValue }}</div>
+  <h3>Valor salvo com enter</h3>
+  <div class="mainbox">{{ savedValue }}</div>
+</div>
+<br>
+<p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>

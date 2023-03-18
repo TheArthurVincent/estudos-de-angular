@@ -1,0 +1,169 @@
+<div class="secondbox">
+  <h1> Angular Tutorial - 15 - Component Interaction</h1>
+  <a href="https://www.youtube.com/watch?v=BGy8DdGw_WE&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=15">class</a>
+  <p>
+  <h1>{{'Hello, ' + nomeDaPessoa}}</h1>
+</div>
+<br>
+<p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>
+<div class="secondbox">
+  <h1>Angular Tutorial - 14 - ngFor Directive
+  </h1><a href="https://www.youtube.com/watch?v=Du3p6QYGs3A&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=14">class</a>
+  <div class="mainbox
+  " *ngFor="let color of colors; index as oi; first as f; last as l; odd as o; even as e">
+    <h1> é impar?{{o}} <br> é par? {{e}}
+      <br>
+      é o primeiro? {{f}}
+      <br> {{ color }} - {{ oi }} <br>é o último? {{ l }}
+    </h1>
+
+  </div>
+</div>
+<br>
+<p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>
+<div class="secondbox">
+  <h1>Angular Tutorial - 13 - ngSwitch Directive
+  </h1><a href="https://www.youtube.com/watch?v=WiDn2y1Ktws&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=13">class</a>
+  <h2></h2>
+  <div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'" class="mainbox">you've chosen red</div>
+    <div *ngSwitchCase="'blue'" class="mainbox">you've chosen blue</div>
+    <div *ngSwitchCase="'green'" class="mainbox">you've chosen green</div>
+  </div>
+
+</div><br>
+<p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>
+<div class="secondbox">
+  <h1>Angular Tutorial - 12 - ngIf Directive
+  </h1>
+  <h2>Estas são diretivas que te permitem acrescentar ou remover elementos do DOM</h2>
+  <a href="https://www.youtube.com/watch?v=nWst87nQmZQ&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=12">class</a>
+  <h2>ngIf and ngSwitch</h2>
+  <p>conditions</p>
+  <h2>ngFor</h2>
+  <p>render a list</p>
+  <h2>Example</h2>
+  <h3 *ngIf="true">Arthur</h3>
+  <p>O <strong>ngIf="false" </strong> faz o elemento DESAPARECER do DOM, diferentemente do <strong>display:none </strong>, que faz com que ele ainda fique visivel no Dom, só não apareça na tela.</p>
+  <h2>Example with button</h2>
+  <p>
+    <button (click)="toggleTOF()">*gIf true or false // clique para fazer o nome desaparecer</button>
+  <h3 *ngIf="tOF">Arthur</h3>
+  <h2>Neste exercício, criarei uma condicional</h2>
+  <button (click)="toggleExercise3()">se clicar nesse botão, o *ngIf muda seu status booleano.</button>
+  <h3>{{ TrueOrFalse }}</h3>
+  <div *ngIf="tof3; else elseFalse" class="secondbox">
+    <h3>Se for true, aparece esse</h3>
+  </div>
+  <br>
+  <p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>
+  <div class="secondbox">
+    <ng-template #elseFalse>
+      <div class="secondbox">
+        <h2>
+          Se for false, aparece esse</h2>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="mainbox">
+    <div *ngIf="tof3; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>thenBlock </ng-template>
+    <ng-template #elseBlock>elseBlock</ng-template>
+  </div>
+</div>
+<br>
+<p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>
+<div class="secondbox">
+  <h1>Angular Tutorial - 11 - Two Way Binding
+  </h1><a href="https://www.youtube.com/watch?v=DOWwWsbG1Sw&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=11">class</a>
+  <h2></h2>
+  <p><input [(ngModel)]="nameNg" type="text"></p>
+  <p>{{ nameNg }}</p>
+</div>
+
+<div class="secondbox">
+  <h1>Angular Tutorial - 10 - Template Reference Variables
+  </h1><a href="https://www.youtube.com/watch?v=Oo0-r_YhoJs">class</a>
+  <h1>My exercise</h1>
+  <input #localV type="text">
+  <button (click)="add(localV.value)">Clique aqui para adicionar o texto</button>
+  <div>{{ localVDiv }}</div>
+
+  <h1>Exercise vishwas
+  </h1>
+  <h3>Criando variavel local</h3>
+  <p>a variavel local se refere ao item html e suas propriedades dom</p>
+  <input #myInput type="text">
+  <button (click)="logMessage(myInput.value)">log</button>
+  <p>O input acima está saindo no console; verifique clicando F12</p>
+  <p></p>
+</div>
+<div class="secondbox">
+  <h1>Angular Tutorial - 9 - Event Binding
+  </h1><a href="https://www.youtube.com/watch?v=ZfIc1_oj7uM">Class</a>
+  <br><br><br>
+  <button btn btn-primary (click)="onClick($event)">clique aqui para ver o tipo de evento acionado</button><br><br>
+  <p>
+  <h3>O tipo de evento acionado foi: {{ domEvent }}</h3>
+  <h3>O do evento é: </h3><br> usando $event como parâmetro, posso acessar as informações sobre o evento dom
+  <button btn btn-primary (click)="onClick(2)">Welcome</button><br><br>
+  <span>{{ int2 }}</span>
+</div>
+<div class="secondbox">
+  <h1>Angular Tutorial - 8 - Style Binding
+  </h1><a href="https://www.youtube.com/watch?v=q256X6-u9Q8"></a>
+  <div [style.color]="highlight">OláOlá</div>
+  <div [ngStyle]="stylesStyles"></div>
+  <p [style.color]="hasError ? 'orange' : 'red'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo minus consectetur libero. Perspiciatis, aut soluta. Mollitia autem culpa quis magnam. Debitis excepturi consequuntur blanditiis assumenda quos rerum doloremque id quisquam?
+  </p>
+
+</div>
+<div class="secondbox">
+  <h1>Angular Tutorial - 7 - Class Binding
+  </h1><a href="https://www.youtube.com/watch?v=Y6OP-lPJxgs">Class</a>
+  <p>
+  <h2>applying</h2>
+  <p [class]='dangerClass'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque laborum pariatur</p><br>
+  <p [class]='successClass'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque laborum pariatur</p><br>
+  <p [class]='specialClass'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque laborum pariatur</p><br>
+  <h2>boolean</h2>
+  <p [class.danger]="hasError">here I did this Syntax: if hasError is true, than it applies class.error. if it's false, than it doesn't</p>
+  <h2>Using ngClass</h2>
+  <h3>Like Vish taught</h3>
+  <p [ngClass]="classesObject">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+  <h3>Like I researched</h3>
+  <p>
+  <div (click)="toggleElement()" [ngClass]="{'danger': isActivated, 'success': !isActivated}">
+    usei o ngClass para dizer que se o isActivated for true, é danger, se for !, é success. e criei um método toggleElement para alternar ao click
+  </div>
+</div>
+
+<div class="secondbox">
+  <h1>Angular Tutorial - 6 - Property Binding
+  </h1><a href="https://www.youtube.com/watch?v=N8FBmB2jme8">class</a>
+  <p>
+  <h2> Difference between Attribute vs Property</h2><br>
+  ATTRIBUTES AND PROPERTIES ARE NOT THE SAME. <br>
+  ATTRIBUTES ARE DEFINED BY HTML. DON'T CHANGE! <br>
+  PROPERTIES ARE DEFINED BY DOM. CAN CHANGE! <br>
+  In the class - Property Binding uses properties of the DOM element! <br>
+  <input type="text" value="Arthur" [id]="myId" [disabled]="false">
+  <input type="text" value="Arthur" [id]="myId" [disabled]="idDisabled">
+  <p>there is a limitation to interpolation, therefore, it's useful to use property binding, since it's gonna be possible to set boolean values, or even numbers or methods.</p>
+</div><br><br>
+<div class="secondbox">
+  <h1>Angular Tutorial - 5 - Interpolation
+  </h1>
+  <a href="https://www.youtube.com/watch?v=2a6OfacW_-I&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ&index=5">class</a>
+  <h2>You can set codes into the interpolation</h2>
+  <p>{{ int1 }}</p>
+  <p>{{ int1.length }}</p>
+  <p>{{ int1.toUpperCase() }}</p>
+  <p>{{ int2 }}</p>
+  <p>{{ greetUser(1) }}</p>
+  <p>{{ siteUrl }}</p>
+  <p>{{ funcao('ois') }}</p>
+</div>
+<br>
+<p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>

@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Arthur", "profession": "teacher" },
+  { "id": 2, "name": " Rodrigues ", "profession": "back-end" },
+  { "id": 2, "name": "  Cardoso", "profession": "front-end" },
+  { "id": 3, "name": "Lorena", "profession": "lawyer" },
+  { "id": 4, "name": "Gaspar", "profession": "math teacher" },
+  { "id": 5, "name": "Gabriela", "profession": "portuguese teacher" },
+  { "id": 5, "name": "Piments", "profession": "doctor" },
+  { "id": 6, "name": "Gaspar", "profession": "dev" }
+]

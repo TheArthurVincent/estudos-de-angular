@@ -1,0 +1,101 @@
+<div class="mainbox">
+  <h1>Curso Angular #09: Property Binding e Interpolação
+  </h1>
+  <h2>Interpolação</h2>
+  <h3>Testando interpolação regular</h3>
+  <p>Renderizar: {{ render }}</p>
+  <p>Meu nome é: {{ arth }}</p>
+  <h3>Testando interpolação com contas matemáticas</h3>
+  <p>1+1= {{ 1+1 }}</p>
+  <p>5*8= {{ 5*8 }}</p>
+  <h3>Testando interpolação com métodos</h3>
+  <p>A equação é 2x+1:<br>
+    x=8 ||| {{ equation(8) }} <br>
+    x=123 ||| {{ equation(123) }} <br>
+    x=45 ||| {{ equation(45) }} <br>
+    x=9 ||| {{ equation(9) }} <br>
+    x=0.6 ||| {{ equation(0.6) }} <br>
+    x=100 ||| {{ equation(100) }} <br>
+  </p>
+  <h2>Property Binding</h2>
+  <p>
+    <a [href]="urlImg">Clique aqui para ver a imagem</a>
+  </p>
+  <img bind-src="urlImg">
+  <p>
+    <a [href]="urlImg2">Clique aqui para ver a imagem</a>
+  </p><img src="{{ urlImg2 }}">
+  <p>
+    <a [href]="urlImg3">Clique aqui para ver a imagem</a>
+  </p><img src="{{ urlImg3 }}">
+</div>
+<div class="mainbox">
+  <h1>Curso Angular #10: Class e Style binding
+  </h1>
+
+  <h2>Class Binding</h2>
+  <p>Primeira coisa: Criar uma variavel local para acessar o combo aqui mesmo no template; <br>
+    Coloquei o evento de (click) e pus =0 porque não quero que aconteça nada no meu elemento por enquanto.
+    <br>Depois removi das DIVS todas as classes que davam cores pra poder adicionar via select. <br>Usar classbinding.para adicionar a classe à linha específica se o seletor escolher. Usei a seguinte maneira: <br>
+    [class.alert-success]="classeselecionada.value == 'alert-success'"
+  </p>
+  <select #classeselecionada (change)="0">
+    <option value="none">None</option>
+    <option value="alert-danger">Danger</option>
+    <option value="alert-dark">Dark</option>
+    <option value="alert-info">Info</option>
+    <option value="alert-light">Light</option>
+    <option value="alert-primary">Primary</option>
+    <option value="alert-secondary">Secondary</option>
+    <option value="alert-success">Success</option>
+    <option value="alert-warning">Warning</option>
+    <option value="alert—check">Check</option>
+  </select>
+  <br><br>
+
+  <div [class.mainbox]="classeselecionada.value == 'none'">nada selecionado</div>
+  <div class="alert" role="alert" [class.alert-primary]="classeselecionada.value == 'alert-primary'">
+    A simple primary alert—check it out!
+  </div>
+  <div class="alert" role="alert" [class.alert-secondary]="classeselecionada.value == 'alert-secondary'">
+    A simple secondary alert—check it out!
+  </div>
+  <div class="alert" role="alert" [class.alert-success]="classeselecionada.value == 'alert-success'">
+    A simple success alert—check it out!
+  </div>
+  <div class="alert" role="alert" [class.alert-danger]="classeselecionada.value == 'alert-danger'">
+    A simple danger alert—check it out!
+  </div>
+  <div class="alert" role="alert" [class.alert-warning]="classeselecionada.value == 'alert-warning'">
+    A simple warning alert—check it out!
+  </div>
+  <div class="alert" role="alert" [class.alert-info]="classeselecionada.value == 'alert-info'">
+    A simple info alert—check it out!
+  </div>
+  <div class="alert" role="alert" [class.alert-light]="classeselecionada.value == 'alert-light'">
+    A simple light alert—check it out!
+  </div>
+  <div class="alert" role="alert" [class.alert-dark]="classeselecionada.value == 'alert-dark'">
+    A simple dark alert—check it out!
+  </div>
+
+
+  <h2>ClassBinding- Outra opção</h2>
+  <p>
+    Aqui vai ser assim: Se eu selecionar o valor do combo, muda a cor:
+  </p>
+  <select #classeselecionada2 (change)="0">
+    <option value="alert-warning">alert-warning</option>
+    <option value="alert-dark">alert-dark</option>
+    <option value="alert-light">alert-light</option>
+    <option value="alert-secondary">alert-secondary</option>
+    <option value="alert-success">alert-success</option>
+    <option value="alert-primary">alert-primary</option>
+  </select><br>
+  <div class="alert {{ classeselecionada2.value }}">Este texto vai mudar conforme o seletor</div>
+  <br><br>
+  <p>Abaixo, existe uma div que só aparece se os 2 selectors forem iguais</p>
+  <div class="mainbox" [style.display]="classeselecionada.value == classeselecionada2.value ? 'block':'none'">Os dois seletores estão com a mesma classe!!</div>
+</div>
+<br>
+<p>Nota: Esta aplicação não tem nenhum propósito específico que não seja servir de histórico para meus estudos de Angular.</p><br>
